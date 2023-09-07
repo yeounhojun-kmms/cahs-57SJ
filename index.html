@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="0902 집회 참석 출석체크" />
+    <meta property="og:description" content="0902 집회 참석 출석체크 - 나도 하나의 점입니다. 국회의사당 역 반경 1km에서 9월 2일만 할 수 있습니다." />
+    <meta property="og:url" content="https://junedevkr.github.io/0902go/" />
+    <meta property="og:type" content="website" />
+    <title>0902 집회 참석 출석체크 - 나도 하나의 점입니다.</title>
+    <link href="https://fonts.cdnfonts.com/css/song-myung" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+</head>
+
+<style>
+    body {
+    font-size: 1.2rem; /* 기본 폰트 크기 증가 */
+    color: white;
+    font-family: 'Song Myung', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 세로 가운데 정렬 */
+    align-items: center; /* 가로 가운데 정렬 */
+    height: 100vh; /* 뷰포트의 전체 높이 */
+    word-break: keep-all;
+    overflow: hidden;
+}   
+
+.grayscale-bg {
+    background-image: url('./bg01.jpg');
+    filter: grayscale(100%); /* Convert image to black and white */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-position: center center; /* Center the background image */
+    background-size: cover;
+    position: fixed; /* Use fixed positioning for full viewport coverage */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image */
+    width: 100%;
+    height: 100vh; /* adjust as necessary */
+    z-index: -1;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6); /* black color with 50% opacity */
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center; /* 세로 가운데 정렬 */
+    align-items: center; /* 가로 가운데 정렬 */
+    word-break: keep-all;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+}
+
+#button {
+        display: flex;
+        font-size: 1.0rem;
+        border-radius: 50%;
+        justify-content: center;
+        border: 10px;
+        border-width: 10px;
+        border-color: black;
+        background-color: black;
+        counter-reset: white;
+        width: 30vw;
+        height: 30vw;
+        max-width: 100px;
+        max-height: 100px;
+        padding: 10px;
+        color: white;
+        align-items: center;
+        
+        
+    }
+
+    #count {
+        font-size: 1.8rem; /* 출석 수 폰트 크기 증가 */
+    }
+
+
+    #attendanceCount {
+        font-size: 1.8rem;
+    }
+
+    @media screen and (max-width: 768px) {
+    body {
+        font-size: 1.2rem; /* 기본 폰트 크기 증가 */
+    }
+
+    #button {
+        font-size: 1.0rem; /* 버튼 폰트 크기 증가 */
+    }
+
+    #count {
+        font-size: 1.8rem; /* 출석 수 폰트 크기 증가 */
+    }
+}
+</style>
+
+<body>
+<div class="grayscale-bg">
+<div class="container">
+<h1>0902<br>나도 하나의 점입니다.</h1>
+<h2>삼가 고인의 명복을 빕니다.</h2>
+
+<div id="button">하나의 <br>점들이<br> 모여</div>
+<p id="count">204160개의 검은 점이 되고<br>
+남기지 못한 수많은 점들이 <br>함께 다녀갔습니다.</p>
+
+<h5>2023년 9월 2일 토요일<br> 낮부터 밤 10시까지 집계하였습니다.</h5>
+
+
+</div>
+</div>
+<!-- 교사는 가르치고 싶다. 학생들은 배우고싶다. 공교육 정상화를 위한 우리의 외침 -->
+
+</body>
+</html>
