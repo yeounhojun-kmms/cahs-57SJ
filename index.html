@@ -72,23 +72,24 @@
 <div id="button" onclick="checkAttendance()">하나의 점 찍기.</div>
 <p id="attendanceCount">통계불러오는중</p>
 
-<h5>2023년 9월 2일 토요일 밤 10시까지 집계합니다.<br>국회의사당역 기준 반경 1km에서만 체크됩니다.<br>
+<h5>학교 본관 기준으로 반경 1km에서만 체크됩니다.<br>
     기기의 위치정보를 허용해주세요.<br>
     기기당 1회만 체크해주세요.<br>
 중복방지를 위해 기기ID를 생성하여 수집합니다.<br>
 개인정보는 포함되지 않습니다.<br>
+    
 <script>
     // Firebase 설정
-    var firebaseConfig = {
-    apiKey: "AIzaSyBYAD1zG3lT9M4WXDZKDPZ2dIAuWK3GK64",
-    authDomain: "go-e659b.firebaseapp.com",
-    projectId: "go-e659b",
-    storageBucket: "go-e659b.appspot.com",
-    messagingSenderId: "66755136966",
-    appId: "1:66755136966:web:b4f5b8bdc0f190368476c7"
-        // 여기에 Firebase 프로젝트 설정을 복사 붙여넣기 합니다.
-    };
-
+  const firebaseConfig = {
+  apiKey: "AIzaSyCFI-7Uy6vx4bnidgKi4s0d5lM3URXhaF8",
+  authDomain: "cahs-57sj.firebaseapp.com",
+  databaseURL: "https://cahs-57sj-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "cahs-57sj",
+  storageBucket: "cahs-57sj.appspot.com",
+  messagingSenderId: "55094987996",
+  appId: "1:55094987996:web:60f4710a75317e289a7819",
+  measurementId: "G-HTC8JPTX3Q"
+};
     firebase.initializeApp(firebaseConfig);
     var database = firebase.database();
 
@@ -128,8 +129,8 @@
                 var lat = position.coords.latitude;
                 var lon = position.coords.longitude;
 
-                var targetLat = 37.527420524758384;
-                var targetLon = 126.91644412696769;
+                var targetLat = 37.58399835526209;
+                var targetLon = 126.98683291328028;
                 var distance = getDistanceFromLatLonInKm(lat, lon, targetLat, targetLon);
 
                 if (distance <= 1) {
@@ -142,13 +143,13 @@
                             });
                             // 해당 기기의 출석을 기록합니다.
                             deviceRef.set(true);
-                            alert('하나의 점이 더해졌습니다.');
+                            alert('응답이 완료되었습니다.');
                         } else {
-                            alert('이 기기에서는 이미 확인하셨습니다. 더 이상 참여는 자제해주세요.');
+                            alert('이 기기에서는 이미 투표하셨습니다.. 더 이상 참여는 자제해주세요.');
                         }
                     });
                 } else {
-                    alert('출석 위치가 아닙니다.');
+                    alert('교내에서만 투표할 수 있습니다. 위치를 확인해주세요.');
                 }
             });
         } else {
